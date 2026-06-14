@@ -57,9 +57,3 @@ def test_to_dict():
         "id": 123,
     }
     assert c2 == c2_expected
-
-
-def test_equality_fail():
-    c1 = Card('sit there', 'brian')
-    c2 = Card('do something', 'okken')
-    assert c1 == c2

@@ -7,6 +7,8 @@ import pytest
 @pytest.fixture(scope="module")
 def cards_db():
     with TemporaryDirectory() as db_dir:
+        import time
+        time.sleep(5)
         db_path = Path(db_dir)
         db = cards.CardsDB(db_path)
         yield db

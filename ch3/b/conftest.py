@@ -8,6 +8,8 @@ import pytest
 def db():
     """CardsDB object connected to a temporary database"""
     with TemporaryDirectory() as db_dir:
+        import time
+        time.sleep(1)
         db_path = Path(db_dir)
         db_ = cards.CardsDB(db_path)
         yield db_
@@ -15,7 +17,7 @@ def db():
 
 
 @pytest.fixture(scope="function")
-def cards_db(db):
+def cards_db(db: cards.CardsDB):
     """CardsDB object that's empty"""
     db.delete_all()
     return db

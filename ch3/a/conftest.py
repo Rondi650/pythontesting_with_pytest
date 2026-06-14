@@ -8,6 +8,8 @@ import pytest
 def cards_db():
     """CardsDB object connected to a temporary database"""
     with TemporaryDirectory() as db_dir:
+        import time
+        time.sleep(1)        
         db_path = Path(db_dir)
         db = cards.CardsDB(db_path)
         yield db

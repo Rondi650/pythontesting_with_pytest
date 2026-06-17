@@ -28,6 +28,6 @@ class TestClass:
 
 
 @pytest.mark.odd
-@pytest.mark.parametrize("x", [6, 7])
+@pytest.mark.parametrize("x", [6, 7, 'puta que pariu'])
 def test_param(x):
     pass

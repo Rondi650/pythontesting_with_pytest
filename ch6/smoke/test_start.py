@@ -13,6 +13,7 @@ def test_start(cards_db):
     assert c.state == "in prog"
 
 
+@pytest.mark.rondinelle
 def test_start_non_existent(cards_db):
     """
     Shouldn't be able to start a non-existent card.
